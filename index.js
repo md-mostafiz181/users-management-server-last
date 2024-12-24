@@ -49,6 +49,14 @@ app.get("/mobiles", (req,res)=>{
     res.send(mobiles)
 })
 
+app.post("/mobiles", (req,res)=>{
+    console.log(req.body);
+    const newMobile = req.body;
+    newMobile.id=mobiles.length + 1;
+    mobiles.push(newMobile);
+    res.send(newMobile)
+})
+
 app.listen(port, ()=>{
     console.log(`user management server is running on port:${port}`)
 })
