@@ -15,6 +15,20 @@ const users =[
     
 ]
 
+
+
+const mobiles = [
+    {id:1, name:"samsung", brand:"samsung"},
+    {id:2, name:"xiaomi", brand: "xiaomi"},
+    {id:3, name:"xiaomi", brand: "xiaomi"},
+    {id:4, name:"xiaomi", brand: "xiaomi"},
+    {id:5, name:"xiaomi", brand: "xiaomi"}
+
+]
+
+
+
+
 app.get("/", (req,res)=>{
     res.send("User management system")
 })
@@ -29,6 +43,10 @@ app.post("/users", (req,res)=>{
     newUser.id =users.length + 1;
     users.push(newUser)
     res.send(newUser)
+});
+
+app.get("/mobiles", (req,res)=>{
+    res.send(mobiles)
 })
 
 app.listen(port, ()=>{
